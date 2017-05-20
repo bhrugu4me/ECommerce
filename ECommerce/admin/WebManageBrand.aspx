@@ -5,8 +5,8 @@
   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <style>
-        .body-content {
+           <style>
+.body-content {
             padding-left: 12.5% !important;
         }
     </style>
@@ -59,7 +59,7 @@
                 submitHandler: function (form) {
                 },
                 invalidHandler: function (form) {
-                }
+}
             });
 
 
@@ -72,28 +72,28 @@
     </script>
 
 
-    <div class="container-fluid body-content">
-        <ol class="breadcrumb">
-            <li><a href="WebAdminHome.aspx">Home</a></li>
-            <li class="active">Manage Brand </li>
-        </ol>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Manage Brand </h3>
+<div class="container-fluid body-content">
+    <ol class="breadcrumb">
+        <li><a href="WebAdminHome.aspx">Home</a></li>
+        <li class="active">Manage Brand </li>
+    </ol>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Manage Brand </h3>
 
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-offset-3 col-md-6">
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-offset-3 col-md-6">
                         <!--<autocomplete ng-model="yourchoice" data="movies" ></autocomplete>-->
                         <asp:Label ID="lblmsg" runat="server"></asp:Label>
-
-
+               
+            
                         <div class="form-group">
                             <label for="Brand" class="col-sm-4 control-label">Brand Name:</label>
                             <div class="col-md-6">
                                 <div class="clearfix">
-
+         
                                     <asp:TextBox ID="txtbname" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server"  CssClass="help-block" ControlToValidate="txtbname" ErrorMessage="Please Enter Brand Name" ForeColor="Red" Font-Bold="true" Display="None" />
                                 </div>
@@ -103,31 +103,31 @@
                             <label for="desc" class="col-sm-4 control-label">Description:</label>
                             <div class="col-md-6">
                                 <div class="clearfix">
-                                    <asp:TextBox ID="txtdesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                            <asp:TextBox ID="txtdesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-9">
-
-                                <asp:HiddenField ID="hdnid" runat="server" Value="0" />
+                       
+                     <asp:HiddenField ID="hdnid" runat="server" Value="0" />
                                 <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" />
-                                <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" />
-                            </div>
-                        </div>
-                    </div>
+                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" />
                 </div>
-                <div class="row">
-                    <div class="col-lg-1">
-                        &nbsp;
-                    </div>
-                </div>
-
             </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    &nbsp;
+                </div>
+            </div>
+        
         </div>
-
-
-
-
     </div>
+
+    
+
+    
+</div>
 </asp:Content>
