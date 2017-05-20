@@ -31,9 +31,6 @@
     </style>
 
     <!-- core JavaScript -->
-
-
-
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
@@ -113,7 +110,6 @@
 
         function checkvalid() {
             var submit = true;
-
             var $valid = $("#validateform").valid();
             if (!$valid) {
                 $validator.focusInvalid();
