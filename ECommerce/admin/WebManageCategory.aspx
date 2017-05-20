@@ -4,10 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
        <style>
 .body-content {
-    padding-top: 65px !important;
-    padding-left:140px !important;
+    padding-left:12.5% !important;
 }
-
        </style>
 
 <div class="container-fluid body-content">

@@ -4,8 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
            <style>
 .body-content {
-    padding-top: 65px !important;
-    padding-left:140px !important;
+    padding-left:12.5% !important;
 }
 
        </style>
@@ -40,8 +39,8 @@
                         </div>
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnsave_Click" />
-                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" CausesValidation="false" OnClick="btnreset_Click" />
+                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save"  />
+                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" />
                 </div>
             </div>
             <div class="row">

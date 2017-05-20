@@ -26,6 +26,7 @@ namespace ECommerce.Admin
             txtdesc.Text = "";
             fillparent();
             dvgrid.Visible = true;
+            lblmsg.Text = "";
         }
 
         public void fillgrid()

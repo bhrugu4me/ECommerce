@@ -20,9 +20,7 @@ namespace ECommerce
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            if (!Page.IsValid)
-            {
-                BusinessObjects.User user = new BusinessObjects.User();
+              BusinessObjects.User user = new BusinessObjects.User();
                 user.EmailId = txtunm.Text;
                 user.Password = ClsUtility.MD5Hash(txtpwd.Text);
                 user = objusr.CheckLogin(user);
@@ -37,7 +35,7 @@ namespace ECommerce
                     Session["fullname"] = user.FirstName + user.LastName;
                     Response.Redirect("Admin/WebAdminHome.aspx");
                 }
-            }
+            
         }
     }
 }

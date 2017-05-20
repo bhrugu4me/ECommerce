@@ -110,7 +110,7 @@ namespace ServiceLayer
                         retobj.InsertedBy = dt.Rows[i]["InsertedBy"].ToString();
                         retobj.InsertedOn = Convert.ToDateTime(dt.Rows[i]["InsertedOn"].ToString());
                         retobj.MobileNo = dt.Rows[i]["ContactNo"].ToString();
-                        retobj.Password = dt.Rows[i]["Password"].ToString();
+                        //retobj.Password = dt.Rows[i]["Password"].ToString();
                         retobj.UpdatedBy = dt.Rows[i]["UpdatedBy"].ToString();
                         retobj.UpdatedOn = Convert.ToDateTime(dt.Rows[i]["UpdatedOn"].ToString());
                         retobj.UserTypeId = dt.Rows[i]["UserTypeId"].ToString();
