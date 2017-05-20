@@ -28,7 +28,7 @@
             
                         <div class="form-group">
                             <label for="Brand" class="control-label" >Brand Name:</label>
-                            <asp:TextBox ID="txtcname" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="txtbname" runat="server" CssClass="form-control"></asp:TextBox>
                                  <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Enter Brand Name" ForeColor="Red" Font-Bold="true" Display="Dynamic" />
          
                         </div>
@@ -39,8 +39,49 @@
                         </div>
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnsave_Click"  />
-                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" />
+                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnreset_Click"  />
+                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
+
+                        <div class="separator"></div>
+             
+                   <div class="row" id="dvgrid" runat="server">
+                <div class="col-lg-8 col-md-offset-2">
+                    
+                    <asp:GridView ID="gvmanageBrand" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvmanageproduct_PageIndexChanging" DataKeyNames="CategaryId" CssClass="table table-bordered table-responsive table-hover" AutoGenerateColumns="False" Width="100%">
+                        <Columns>
+                            <asp:TemplateField HeaderText="Brand Name">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("CategaryName") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Description">
+                                <ItemTemplate>
+                                    <asp:Label ID="Label3" runat="server" Text='<%# Eval("Description") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                           
+                             <asp:TemplateField HeaderText="Edit">
+                                  <ItemTemplate>
+                                      <div class="glyphicon">
+            <i class="glyphicon glyphicon-pencil form-control-feedback"></i>
+            <asp:Button ID="btnedit" runat="server" BackColor="Transparent" BorderWidth="0" CausesValidation="false" CssClass="btn btn-default" OnClick="btnedit_Click" CommandArgument='<%# Eval("CategaryId") %>' ></asp:Button>
+        </div>
+                                </ItemTemplate>
+                         
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Delete">
+                                 <ItemTemplate>
+                                      <div class="glyphicon">
+            <i class="glyphicon glyphicon-trash form-control-feedback"></i>
+            <asp:Button ID="btndel" runat="server" BackColor="Transparent" BorderWidth="0" class="btn btn-default"  CausesValidation="false" CommandArgument='<%# Eval("CategaryId") %>' OnClick="btndel_Click"></asp:Button>
+        </div>
+                                </ItemTemplate>
+                         
+                            </asp:TemplateField>
+                        </Columns>
+                      </asp:GridView>
+                </div>
+            </div>
                 </div>
             </div>
             <div class="row">

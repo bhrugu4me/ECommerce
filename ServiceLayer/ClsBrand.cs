@@ -23,14 +23,14 @@ public class ClsBrand
             return objblbrand.UpdateBrand(obj);
         }
 
-        public Int64 DeleteBrand(Brand obj)
+        public Int64 DeleteBrand(int id)
         {
-            return objblbrand.DeleteBrand(obj);
+            return objblbrand.DeleteBrand(id);
         }
-        public Brand AllBrandById(Brand obj)
+        public Brand AllBrandById(int id)
         {
             DataTable dt = new DataTable();
-            dt = objblbrand.GetAllBrandById(obj);
+            dt = objblbrand.GetAllBrandById(id);
 
             Brand retobj = new Brand();
             if (dt != null)

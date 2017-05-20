@@ -22,13 +22,13 @@ namespace ECommerce.admin {
         protected global::System.Web.UI.WebControls.Label lblmsg;
         
         /// <summary>
-        /// txtcname control.
+        /// txtbname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcname;
+        protected global::System.Web.UI.WebControls.TextBox txtbname;
         
         /// <summary>
         /// txtdesc control.
@@ -65,5 +65,23 @@ namespace ECommerce.admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnreset;
+        
+        /// <summary>
+        /// dvgrid control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl dvgrid;
+        
+        /// <summary>
+        /// gvmanageBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvmanageBrand;
     }
 }

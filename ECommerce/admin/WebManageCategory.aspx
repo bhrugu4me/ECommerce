@@ -54,7 +54,8 @@
             <%--   <div ng-show="Loading" class="loading">
                 <i class='fa fa-spinner fa-spin'></i>
                 <strong>Data Loading...</strong>
-            </div>--%>       <div class="separator"></div>
+            </div>--%>     
+              <div class="separator"></div>
              
                    <div class="row" id="dvgrid" runat="server">
                 <div class="col-lg-8 col-md-offset-2">

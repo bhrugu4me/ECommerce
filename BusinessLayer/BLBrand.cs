@@ -68,7 +68,7 @@ namespace BusinessLayer
                 cmd.Dispose();
             }
         }
-        public Int64 DeleteBrand(Brand obj)
+        public Int64 DeleteBrand(int id)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace BusinessLayer
                 cmd.CommandText = "SP_MANAGE_USERTYPE";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "DELETE");
-                cmd.Parameters.AddWithValue("@BrandId", obj.BrandId);
+                cmd.Parameters.AddWithValue("@BrandId", id);
 
                 return dbc.ExecuteQuery(cmd);
 
@@ -111,7 +111,7 @@ namespace BusinessLayer
             }
 
         }
-        public DataTable GetAllBrandById(Brand obj)
+        public DataTable GetAllBrandById(int id)
         {
             try
             {
@@ -119,7 +119,7 @@ namespace BusinessLayer
                 cmd.CommandText = "SP_MANAGE_BRAND";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "GETALL");
-                cmd.Parameters.AddWithValue("@BrandId", obj.BrandId);
+                cmd.Parameters.AddWithValue("@BrandId", id);
                 return dbc.ExecuteQueryDataTable(cmd);
             }
             catch
