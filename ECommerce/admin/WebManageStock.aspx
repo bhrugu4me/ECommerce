@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="WebManageStock.aspx.cs" Inherits="ECommerce.Admin.WebManageStock" %>
+﻿<%@ Page Title="Admin - Manage Stock" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="WebManageStock.aspx.cs" Inherits="ECommerce.Admin.WebManageStock" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
