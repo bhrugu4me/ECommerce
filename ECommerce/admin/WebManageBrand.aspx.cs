@@ -113,10 +113,5 @@ namespace ECommerce.admin
             }
         }
 
-        protected void gvmanageproduct_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gvmanageBrand.PageIndex = e.NewPageIndex;
-            Fillgrid();
-        }
     }
 }
