@@ -52,6 +52,7 @@ namespace BusinessLayer
                 cmd.CommandText = "SP_MANAGE_BRAND";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "UPDATE");
+                cmd.Parameters.AddWithValue("@BrandId", obj.BrandId);
                 cmd.Parameters.AddWithValue("@BrandName", obj.BrandName);
                 cmd.Parameters.AddWithValue("@Description", obj.Description);
                 cmd.Parameters.AddWithValue("@requestedby", obj.requestedBy);
@@ -68,15 +69,15 @@ namespace BusinessLayer
                 cmd.Dispose();
             }
         }
-        public Int64 DeleteBrand(int id)
+        public int DeleteBrand(Brand obj)
         {
             try
             {
                 cmd = new SqlCommand();
-                cmd.CommandText = "SP_MANAGE_USERTYPE";
+                cmd.CommandText = "SP_MANAGE_BRAND";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "DELETE");
-                cmd.Parameters.AddWithValue("@BrandId", id);
+                cmd.Parameters.AddWithValue("@BrandId", obj.BrandId);
 
                 return dbc.ExecuteQuery(cmd);
 
