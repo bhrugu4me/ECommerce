@@ -64,6 +64,13 @@
                     <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnsave_Click"  />
                    <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" OnClick="Page_Load" CausesValidation="false"  />
                 </div>
+                <div class="form-group" id="btnfuplaod" runat="server">
+                    <label for="fupload">Upload Image</label>
+                    <asp:TextBox ID="txtimage" runat="server" CssClass="form-control"></asp:TextBox>
+                 <asp:FileUpload ID="btnfileupload" runat="server" CssClass="btn btn-link"  />
+                  
+              
+                </div>
             </div>
             <div class="row">
                 <div class="col-lg-1">

@@ -28,7 +28,7 @@ namespace ECommerce
         public void fillusertype()
         {
             List<UserType> usertype = new List<UserType>();
-            usertype = objtype.AllUserType().Where(p => p.UserTypeId != 0).ToList();
+            usertype = objtype.AllUserType().Where(p => p.UserTypeId != 1).ToList();
             if (usertype.Count > 0)
             {
                 ddlusertype.DataSource = usertype;
@@ -53,7 +53,7 @@ namespace ECommerce
                 long ret = -1;
                 user.FirstName = txtfirstname.Text;
                 user.LastName = txtlastname.Text;
-                user.Password = txtpassword.Text;
+                user.Password = ClsUtility.MD5Hash(txtpassword.Text.Trim().ToString());
                 user.EmailId = txtemailid.Text;
                 user.MobileNo = txtmobileno.Text;
                 user.Birthdate = Convert.ToDateTime(txtbirthdate.Text.ToString());

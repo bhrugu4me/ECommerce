@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessObjects;
 using ServiceLayer;
+using System.IO;
 
 namespace ECommerce.Admin
 {
@@ -36,7 +37,7 @@ namespace ECommerce.Admin
             ClsUser objusr = new ClsUser();
             List<User> usrs = new List<BusinessObjects.User>();
             usrs = objusr.AllUsers().Where(p => p.UserTypeId.Equals("3")).ToList();
-            if(usrs.Count>0)
+            if (usrs.Count > 0)
             {
                 ddlsell.DataSource = usrs;
                 ddlsell.DataTextField = "FirstName";
@@ -84,20 +85,20 @@ namespace ECommerce.Admin
             {
                 ddlcat.DataSource = null;
                 ddlcat.DataBind();
-                
+
             }
             ddlcat.Items.Insert(0, new ListItem("<- Select ->", "0"));
 
         }
 
-      
+
 
         protected void ddlcat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(ddlcat.SelectedIndex>0)
-            { 
+            if (ddlcat.SelectedIndex > 0)
+            {
                 List<Categary> CatList = objcat.SubCategoryList(Convert.ToInt32(ddlcat.SelectedItem.Value));
-                if(CatList.Count>0)
+                if (CatList.Count > 0)
                 {
                     ddlsubcat.Visible = true;
                     if (CatList != null)
@@ -126,17 +127,20 @@ namespace ECommerce.Admin
         }
         protected void btnsave_Click(object sender, EventArgs e)
         {
+
             ClsProduct objprod = new ClsProduct();
             Product product = new Product();
             product.CategaryId = ddlcat.SelectedItem.Value;
-           product.CategaryName = ddlcat.SelectedItem.Text;
+            product.CategaryName = ddlcat.SelectedItem.Text;
             product.Description = txtdesc.Text;
             product.ProductName = txtpname.Text;
             product.SellerDescr = txtsdesc.Text;
             product.SellerId = ddlsell.SelectedItem.Value;
-            product.SubCategaryId = dvsubcat.Visible? ddlsubcat.SelectedItem.Value : "0";
+            product.SubCategaryId = dvsubcat.Visible ? ddlsubcat.SelectedItem.Value : "0";
             product.SubCategaryName = dvsubcat.Visible ? ddlsubcat.SelectedItem.Text : "";
             product.requestedby = Session["uid"].ToString();
+
+
 
 
 
@@ -147,6 +151,8 @@ namespace ECommerce.Admin
                 reset();
             }
         }
+
+      
+
     }
-  
 }
