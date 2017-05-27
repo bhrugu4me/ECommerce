@@ -312,6 +312,7 @@
     <Content Include="assets\js\validate.min.js" />
     <Content Include="assets\js\validator.jquery.json" />
     <Content Include="assets\js\validator.js" />
+    <Content Include="DBChanges\SP_MANAGE_BRAND.sql" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -429,6 +430,7 @@
       <Name>ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

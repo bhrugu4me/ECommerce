@@ -42,7 +42,7 @@ namespace ECommerce
                 ddlusertype.DataBind();
 
             }
-            ddlusertype.Items.Insert(0, new ListItem("<-- Select -->", "0"));
+            ddlusertype.Items.Insert(0, new ListItem("<-- Select -->", ""));
         }
 
         protected void btnsignup_Click(object sender, EventArgs e)

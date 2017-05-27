@@ -72,7 +72,7 @@
                 errorClass: 'help-block',
                 focusInvalid: false,
                 rules: {
-                    txtemail: {
+                    txtemailid: {
                         required: true,
                         email: true
                     },
@@ -82,26 +82,29 @@
                     txtlastname: {
                         required: true
                     },
-                    txtcntno: {
+                    txtmobileno: {
                         required: true,
                         phone: true
                     },
-                    txtpwd: {
+                    txtpassword: {
                         required: true
                     },
-                    txtcpwd: {
+                    txtcpassword: {
                         required: true
                     },
-                    txtunm: {
+                    txtbirthdate: {
                         required: true
                     },
-                    ddlutype: {
+                    ddlusertype: {
+                        required: true
+                    },
+                    rbgender: {
                         required: true
                     },
                 },
 
                 messages: {
-                    txtemail: {
+                    txtemailid: {
                         required: "Please Specify Email.",
                         email: "Please provide a valid email."
                     },
@@ -113,23 +116,29 @@
                         required: "Please Specify Last Name.",
                     },
 
-                    txtpwd: {
+                    txtpassword: {
                         required: "Please Specify Password.",
                     },
 
-                    txtcpwd: {
+                    txtcpassword: {
                         required: "Please Specify Confirm Password.",
                     },
-                    txtunm: {
+                    txtemailid: {
                         required: "Please Specify User Name.",
                     },
-                    ddlutype: {
+                    ddlusertype: {
                         required: "Please Select User Type"
                     },
-                    txtcntno: {
+                    txtbirthdate: {
+                        required: "Please Specify BirthDate"
+                    },
+                    txtmobileno: {
                         required: "Please Specify Phone.",
                         phone: "Please provide a valid Phone."
                     },
+                    rbgender: {
+                        required: "Please Specify Gender."
+                    }
 
                 },
 

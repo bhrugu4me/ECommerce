@@ -14,6 +14,10 @@ namespace ECommerce.admin
         ClsBrand objbrand = new ClsBrand();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                reset();
+            }
 
         }
 
@@ -96,7 +100,7 @@ namespace ECommerce.admin
         protected void btndel_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            long ret = -1;
+            int ret = -1;
             ret = objbrand.DeleteBrand(Convert.ToInt32(btn.CommandArgument.ToString()));
             if (ret > 0)
             { 

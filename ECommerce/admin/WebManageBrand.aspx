@@ -31,10 +31,7 @@
                     }
                 },
 
-                invalidHandler: function (event, validator) { //display error alert on form submit   
-                    $('.alert-danger', $('.login-form')).show();
-                },
-
+              
                 highlight: function (e) {
                     $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
                 },
@@ -64,9 +61,22 @@
            
         });
 
+          function checkvalid() {
+              var submit = true;
+
+              var $valid = $("#validateform").valid();
+              if (!$valid) {
+                  $validator.focusInvalid();
+                  submit = false;
+              }
+              return submit;
+
+          }
 
 
     </script>
+
+ 
 
 
 <div class="container-fluid body-content">
@@ -91,7 +101,7 @@
                             <div class="col-md-6">
                                 <div class="clearfix">
          
-                                    <asp:TextBox ID="txtbname" runat="server" ClientIDMode="Static" CssClass="form-control"></asp:TextBox>
+                                    <asp:TextBox ID="txtbname" runat="server"  CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator runat="server"  CssClass="help-block" ControlToValidate="txtbname" ErrorMessage="Please Enter Brand Name" ForeColor="Red" Font-Bold="true" Display="None" />
                                 </div>
                             </div>
@@ -108,19 +118,29 @@
                             <div class="col-sm-offset-4 col-sm-9">
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnreset_Click"  />
+                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click"  />
                    <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
 
-                        <div class="separator"></div>
+                       
+                </div>
+            </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-lg-1">
+                    &nbsp;
+                </div>
+            </div>
+         <div class="separator"></div>
              
                    <div class="row" id="dvgrid" runat="server">
                 <div class="col-lg-8 col-md-offset-2">
                     
-                    <asp:GridView ID="gvmanageBrand" runat="server" AllowPaging="true" PageSize="5" OnPageIndexChanging="gvmanageproduct_PageIndexChanging" DataKeyNames="CategaryId" CssClass="table table-bordered table-responsive table-hover" AutoGenerateColumns="False" Width="100%">
+                    <asp:GridView ID="gvmanageBrand" runat="server" AllowPaging="true" PageSize="5" DataKeyNames="BrandId" CssClass="table table-bordered table-responsive table-hover" AutoGenerateColumns="False" Width="100%">
                         <Columns>
                             <asp:TemplateField HeaderText="Brand Name">
                                 <ItemTemplate>
-                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("CategaryName") %>'></asp:Label>
+                                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("BrandName") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Description">
@@ -133,7 +153,7 @@
                                   <ItemTemplate>
                                       <div class="glyphicon">
             <i class="glyphicon glyphicon-pencil form-control-feedback"></i>
-            <asp:Button ID="btnedit" runat="server" BackColor="Transparent" BorderWidth="0" CausesValidation="false" CssClass="btn btn-default" OnClick="btnedit_Click" CommandArgument='<%# Eval("CategaryId") %>' ></asp:Button>
+            <asp:Button ID="btnedit" runat="server" BackColor="Transparent" BorderWidth="0" CausesValidation="false" CssClass="btn btn-default" OnClick="btnedit_Click" CommandArgument='<%# Eval("BrandId") %>' ></asp:Button>
         </div>
                                 </ItemTemplate>
                          
@@ -142,7 +162,7 @@
                                  <ItemTemplate>
                                       <div class="glyphicon">
             <i class="glyphicon glyphicon-trash form-control-feedback"></i>
-            <asp:Button ID="btndel" runat="server" BackColor="Transparent" BorderWidth="0" class="btn btn-default"  CausesValidation="false" CommandArgument='<%# Eval("CategaryId") %>' OnClick="btndel_Click"></asp:Button>
+            <asp:Button ID="btndel" runat="server" BackColor="Transparent" BorderWidth="0" class="btn btn-default"  CausesValidation="false" CommandArgument='<%# Eval("BrandId") %>' OnClick="btndel_Click"></asp:Button>
         </div>
                                 </ItemTemplate>
                          
@@ -151,16 +171,6 @@
                       </asp:GridView>
                 </div>
             </div>
-                </div>
-            </div>
-                    </div>
-                </div>
-            <div class="row">
-                <div class="col-lg-1">
-                    &nbsp;
-                </div>
-            </div>
-        
         </div>
     </div>
 
