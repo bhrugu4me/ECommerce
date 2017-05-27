@@ -28,7 +28,7 @@ namespace ECommerce
         public void fillusertype()
         {
             List<UserType> usertype = new List<UserType>();
-            usertype = objtype.AllUserType().Where(p => p.UserTypeId != 0).ToList();
+            usertype = objtype.AllUserType().Where(p => p.UserTypeId != 1).ToList();
             if (usertype.Count > 0)
             {
                 ddlusertype.DataSource = usertype;
@@ -42,7 +42,7 @@ namespace ECommerce
                 ddlusertype.DataBind();
 
             }
-            ddlusertype.Items.Insert(0, new ListItem("<-- Select -->", "0"));
+            ddlusertype.Items.Insert(0, new ListItem("<-- Select -->", ""));
         }
 
         protected void btnsignup_Click(object sender, EventArgs e)
