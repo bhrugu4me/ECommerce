@@ -44,6 +44,8 @@ namespace ServiceLayer
                         retobj = new Product();
                         retobj.ProductId = Convert.ToInt32(dt.Rows[i]["ProductId"].ToString());
                         retobj.ProductName = dt.Rows[i]["ProductName"].ToString();
+                        retobj.ProductImage = dt.Rows[i]["ProductImage"].ToString();
+                        retobj.ActualImage = dt.Rows[i]["ActualImage"].ToString();
                         retobj.Description = dt.Rows[i]["Description"].ToString();
                         retobj.InsertedBy = dt.Rows[i]["InsertedBy"].ToString();
                         retobj.InsertedOn = Convert.ToDateTime(dt.Rows[i]["InsertedOn"].ToString());
@@ -61,6 +63,42 @@ namespace ServiceLayer
             return lstcat;
 
         }
+
+        public List<Product> ProductListByCategory(int catid)
+        {
+            DataTable dt = new DataTable();
+            dt = objblproduct.GetProductsByCategory(catid);
+            List<Product> lstcat = new List<Product>();
+            Product retobj;
+            if (dt != null)
+            {
+                if (dt.Rows.Count > 0)
+                {
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                        retobj = new Product();
+                        retobj.ProductId = Convert.ToInt32(dt.Rows[i]["ProductId"].ToString());
+                        retobj.ProductName = dt.Rows[i]["ProductName"].ToString();
+                        retobj.ProductImage = dt.Rows[i]["ProductImage"].ToString();
+                        retobj.ActualImage = dt.Rows[i]["ActualImage"].ToString();
+                        retobj.Description = dt.Rows[i]["Description"].ToString();
+                        retobj.InsertedBy = dt.Rows[i]["InsertedBy"].ToString();
+                        retobj.InsertedOn = Convert.ToDateTime(dt.Rows[i]["InsertedOn"].ToString());
+                        retobj.CategaryName = dt.Rows[0]["CategaryName"].ToString();
+                        retobj.SubCategaryName = dt.Rows[0]["SubCategaryName"].ToString();
+                        retobj.SubCategaryId = dt.Rows[0]["SubCategaryId"].ToString();
+                        retobj.CategaryId = dt.Rows[i]["CategaryId"].ToString();
+                        retobj.UpdatedBy = dt.Rows[i]["UpdatedBy"].ToString();
+                        retobj.UpdatedOn = Convert.ToDateTime(dt.Rows[i]["UpdatedOn"].ToString());
+                        lstcat.Add(retobj);
+                    }
+
+                }
+            }
+            return lstcat;
+
+        }
+
         public Product ProductById(int id)
         {
            Product obj = new Product();
@@ -74,6 +112,8 @@ namespace ServiceLayer
                 {
                     retobj.ProductId = Convert.ToInt32(dt.Rows[0]["ProductId"].ToString());
                     retobj.ProductName = dt.Rows[0]["ProductName"].ToString();
+                    retobj.ProductImage = dt.Rows[0]["ProductImage"].ToString();
+                    retobj.ActualImage = dt.Rows[0]["ActualImage"].ToString();
                     retobj.Description = dt.Rows[0]["Description"].ToString();
                     retobj.InsertedBy = dt.Rows[0]["InsertedBy"].ToString();
                     retobj.InsertedOn = Convert.ToDateTime(dt.Rows[0]["InsertedOn"].ToString());
