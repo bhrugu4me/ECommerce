@@ -49,6 +49,7 @@
     <Compile Include="BLUser.cs" />
     <Compile Include="BLUserAddress.cs" />
     <Compile Include="BLUserType.cs" />
+    <Compile Include="BLUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
