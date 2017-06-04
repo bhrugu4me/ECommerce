@@ -86,7 +86,7 @@ namespace BusinessLayer
             try
             {
                 cmd = new SqlCommand();
-                cmd.CommandText = "SP_MANANGE_USER";
+                cmd.CommandText = "SP_MANAGE_USERADDRESS";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "GETALL");
 

@@ -109,6 +109,29 @@ namespace BusinessLayer
             }
 
         }
+        public DataTable ChangePwd(User obj)
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "SP_MANAGE_USER";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@action", "CHANGEPWD");
+                cmd.Parameters.AddWithValue("@password", obj.Password);
+                cmd.Parameters.AddWithValue("@UserId", obj.UserId);
+
+                return dbc.ExecuteQueryDataTable(cmd);
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+        }
 
         public DataTable GetAllUsers()
         {

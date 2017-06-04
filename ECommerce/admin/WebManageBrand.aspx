@@ -98,7 +98,7 @@
             
                         <div class="form-group">
                             <label for="Brand" class="col-sm-4 control-label">Brand Name:</label>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="clearfix">
          
                                     <asp:TextBox ID="txtbname" runat="server"  CssClass="form-control"></asp:TextBox>
@@ -108,12 +108,13 @@
                         </div>
                         <div class="form-group">
                             <label for="desc" class="col-sm-4 control-label">Description:</label>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="clearfix">
                             <asp:TextBox ID="txtdesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                                 </div>
                             </div>
                         </div>
+                       <div class="form-actions">
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-9">
                        
@@ -124,6 +125,7 @@
                        
                 </div>
             </div>
+                           </div>
                     </div>
                 </div>
             <div class="row">

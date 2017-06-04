@@ -7,7 +7,84 @@
     padding-left:12.5% !important;
 }
        </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
 
+            //documentation : http://docs.jquery.com/Plugins/Validation/validate		
+            $('#validateform').validate({
+                errorElement: 'div',
+                errorClass: 'help-block',
+                focusInvalid: false,
+                rules: {
+                    
+                     <%= txtcname.UniqueID %>: {
+                        required: true
+                     },
+                     <%= txtdesc.UniqueID %>: {
+                        required: true
+                     },
+                    <%= ddlpcat.UniqueID %>: {
+                        required: true
+                    },
+                },
+
+                messages: {
+                   
+                    <%= txtcname.UniqueID %> : {
+                        required: "Please Specify Category Name.",
+                    },
+                     <%= txtdesc.UniqueID %> : {
+                        required: "Please Specify Description.",
+                     },
+                     <%= ddlpcat.UniqueID %> : {
+                        required: "Please Specify Parent Category.",
+                    }
+                },
+
+              
+                highlight: function (e) {
+                    $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+                },
+
+                success: function (e) {
+                    $(e).closest('.form-group').removeClass('has-error').addClass('has-info');
+                    $(e).remove();
+                },
+
+                errorPlacement: function (error, element) {
+                    if (element.is(':checkbox') || element.is(':radio')) {
+                        var controls = element.closest('div[class*="col-"]');
+                        if (controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                        else error.insertAfter(element.nextAll('.labels:eq(0)').eq(0));
+                    }
+                    else error.insertAfter(element.parent());
+                },
+
+                submitHandler: function (form) {
+                },
+                invalidHandler: function (form) {
+}
+            });
+
+
+            
+           
+        });
+
+          function checkvalid() {
+              var submit = true;
+
+              var $valid = $("#validateform").valid();
+              if (!$valid) {
+                  $validator.focusInvalid();
+                  submit = false;
+              }
+              return submit;
+
+          }
+
+
+    </script>
 <div class="container-fluid body-content">
     <ol class="breadcrumb">
         <li><a href="WebAdminHome.aspx">Home</a></li>
@@ -26,24 +103,42 @@
                
             
                         <div class="form-group">
-                            <label for="category" class="control-label" >Category Name:</label>
+                            <label for="category"  class="col-sm-4 control-label" >Category Name:</label>
+                             <div class="col-sm-4">
+                                <div class="clearfix">
                             <asp:TextBox ID="txtcname" runat="server" CssClass="form-control"></asp:TextBox>
-                                 <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Enter Product Name" ForeColor="Red" Font-Bold="true" Display="Dynamic" />
+                                 <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Enter Product Name" ForeColor="Red" Font-Bold="true" Display="None" />
+                                    </div>
+                                 </div>
          
                         </div>
                         <div class="form-group">
-                            <label for="desc">Description:</label>
+                            <label  class="col-sm-4 control-label" for="desc">Description:</label>
+                             <div class="col-sm-4">
+                                <div class="clearfix">
                             <asp:TextBox ID="txtdesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
-                              <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Enter Description" ForeColor="Red" Font-Bold="true" Display="Dynamic" />
+                              <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Enter Description" ForeColor="Red" Font-Bold="true" Display="None" />
+                                    </div>
+                                 </div>
                         </div>
                         <div class="form-group">
-                            <label for="pcat">Parent Category</label>
+                            <label  class="col-sm-4 control-label" for="pcat">Parent Category</label>
+                             <div class="col-sm-4">
+                                <div class="clearfix">
                             <asp:DropDownList ID="ddlpcat" CssClass="form-control" runat="server"></asp:DropDownList>
-                              <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Select Parent Categary" ForeColor="Red" Font-Bold="true" Display="Dynamic" />
+                              <asp:RequiredFieldValidator runat="server" CssClass="help-block" ControlToValidate="txtcname" ErrorMessage="Please Select Parent Categary" ForeColor="Red" Font-Bold="true" Display="None" />
+                                    </div>
+                                 </div>
                         </div>
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
+                    <div class="form-actions">
+                            <div class="form-group">
+                                <div class="col-sm-offset-4 col-sm-9">
                     <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClick="btnsave_Click" />
                    <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" CausesValidation="false" OnClick="btnreset_Click" />
+                                    </div>
+                                </div>
+                        </div>
                 </div>
             </div>
             <div class="row">
@@ -81,7 +176,7 @@
                              <asp:TemplateField HeaderText="Edit">
                                   <ItemTemplate>
                                       <div class="glyphicon">
-            <i class="glyphicon glyphicon-pencil form-control-feedback"></i>
+            <i class="glyphicon glyphicon-pencil form-control-feedback" style="right: 2px; top: 7px"></i>
             <asp:Button ID="btnedit" runat="server" BackColor="Transparent" BorderWidth="0" CausesValidation="false" CssClass="btn btn-default" OnClick="btnedit_Click" CommandArgument='<%# Eval("CategaryId") %>' ></asp:Button>
         </div>
                                 </ItemTemplate>
@@ -90,7 +185,7 @@
                             <asp:TemplateField HeaderText="Delete">
                                  <ItemTemplate>
                                       <div class="glyphicon">
-            <i class="glyphicon glyphicon-trash form-control-feedback"></i>
+            <i class="glyphicon glyphicon-trash form-control-feedback" style="right: -35px; top: 4px; width: 32px"></i>
             <asp:Button ID="btndel" runat="server" BackColor="Transparent" BorderWidth="0" class="btn btn-default"  CausesValidation="false" CommandArgument='<%# Eval("CategaryId") %>' OnClick="btndel_Click"></asp:Button>
         </div>
                                 </ItemTemplate>

@@ -135,8 +135,8 @@
             <ul class="nav navbar-nav">
                 <li><a href="WebManageCategory.aspx">Manage Category</a></li>
                 <li><a href="WebManageBrand.aspx">Manage Brand</a></li>
-
-                <li><a href="WebManageProduct.aspx">Manage Product</a></li>
+                <li><a href="WebChangePassword.aspx">Manage Product</a></li>
+                <%--<li><a href="WebManageProduct.aspx">Manage Product</a></li>--%>
             </ul>
         </div>
 

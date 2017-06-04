@@ -57,7 +57,10 @@ namespace ServiceLayer
             return retobj;
 
         }
-
+        public DataTable Changepwd(User obj)
+        {
+            return objbluser.ChangePwd(obj);
+        }
 
         public User AllUserById(User obj)
         {

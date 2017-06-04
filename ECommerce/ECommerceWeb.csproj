@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\WebAdminHome.aspx" />
+    <Content Include="admin\WebChangePassword.aspx" />
     <Content Include="admin\WebManageBrand.aspx" />
     <Content Include="admin\WebManageCategory.aspx" />
     <Content Include="admin\WebManageProduct.aspx" />
@@ -313,6 +314,7 @@
     <Content Include="assets\js\validator.jquery.json" />
     <Content Include="assets\js\validator.js" />
     <Content Include="DBChanges\SP_MANAGE_BRAND.sql" />
+    <Content Include="DBChanges\SP_MANAGE_USER.sql" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -368,6 +370,13 @@
     </Compile>
     <Compile Include="admin\WebAdminHome.aspx.designer.cs">
       <DependentUpon>WebAdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\WebChangePassword.aspx.cs">
+      <DependentUpon>WebChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\WebChangePassword.aspx.designer.cs">
+      <DependentUpon>WebChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\WebManageBrand.aspx.cs">
       <DependentUpon>WebManageBrand.aspx</DependentUpon>
