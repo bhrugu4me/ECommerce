@@ -6,6 +6,7 @@
 .body-content {
             padding-left: 12.5% !important;
         }
+
     </style>
 
 
@@ -61,19 +62,7 @@
            
         });
 
-          function checkvalid() {
-              var submit = true;
-
-              var $valid = $("#validateform").valid();
-              if (!$valid) {
-                  $validator.focusInvalid();
-                  submit = false;
-              }
-              return submit;
-
-          }
-
-
+    
     </script>
 
  
@@ -118,8 +107,8 @@
                             <div class="col-sm-offset-4 col-sm-9">
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click"  />
-                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
+                    <asp:LinkButton ID="btnsave" runat="server" ClientIDMode="Static" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click"  />
+                   <asp:LinkButton ID="btnreset" runat="server" ClientIDMode="Static" type="reset" CausesValidation="false" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
 
                        
                 </div>
@@ -152,8 +141,7 @@
                              <asp:TemplateField HeaderText="Edit">
                                   <ItemTemplate>
                                       <div class="glyphicon">
-            <i class="glyphicon glyphicon-pencil form-control-feedback"></i>
-            <asp:Button ID="btnedit" runat="server" BackColor="Transparent" BorderWidth="0" CausesValidation="false" CssClass="btn btn-default" OnClick="btnedit_Click" CommandArgument='<%# Eval("BrandId") %>' ></asp:Button>
+            <asp:LinkButton ID="btnedit" runat="server" CausesValidation="false" OnClick="btnedit_Click" CommandArgument='<%# Eval("BrandId") %>' ><i class='glyphicon glyphicon-pencil'></i></asp:LinkButton>
         </div>
                                 </ItemTemplate>
                          
@@ -161,8 +149,8 @@
                             <asp:TemplateField HeaderText="Delete">
                                  <ItemTemplate>
                                       <div class="glyphicon">
-            <i class="glyphicon glyphicon-trash form-control-feedback"></i>
-            <asp:Button ID="btndel" runat="server" BackColor="Transparent" BorderWidth="0" class="btn btn-default"  CausesValidation="false" CommandArgument='<%# Eval("BrandId") %>' OnClick="btndel_Click"></asp:Button>
+          
+            <asp:LinkButton ID="btndel" runat="server"  CausesValidation="false" CommandArgument='<%# Eval("BrandId") %>' OnClick="btndel_Click">  <i class="glyphicon glyphicon-trash"></i></asp:LinkButton>
         </div>
                                 </ItemTemplate>
                          
