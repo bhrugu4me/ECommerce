@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessObjects;
 using ServiceLayer;
+using System.Data;
 
 namespace ECommerce.admin
 {
@@ -30,22 +31,24 @@ namespace ECommerce.admin
             lblmsg.Text = "";
         }
 
-        protected void btnsave_Click(object sender, EventArgs e)
+       
+        protected void lnkbtnsave_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
                 BusinessObjects.User user = new BusinessObjects.User();
-                long ret = -1;
+                DataTable dt = new DataTable();
+                int ret = -1;
                 if (Session["Pwd"].ToString() != txtcurrpwd.Text)
                 {
                     lblmsg.Text = "Please enter correct Current Password";
-                } 
+                }
                 else
                 {
                     user.Password = ClsUtility.MD5Hash(txtnewpwd.Text.Trim().ToString());
-                    user.UserId = Convert.ToInt64(Session["Uid"].ToString());
-                    ret = Convert.ToInt64(objusr.Changepwd(user).ToString());
-                    if (ret > 0)
+                    user.UserId = Convert.ToInt32(Session["Uid"].ToString());
+                    dt = objusr.Changepwd(user);
+                    if (dt != null)
                         lblmsg.Text = "password changed successfully";
                     else
                     {
@@ -56,14 +59,9 @@ namespace ECommerce.admin
             }
         }
 
-        protected void btnreset_Click(object sender, EventArgs e)
+        protected void lnkbtnreset_Click(object sender, EventArgs e)
         {
             reset();
-        }
-
-        protected void btnsave_Click1(object sender, EventArgs e)
-        {
-
         }
     }
 }

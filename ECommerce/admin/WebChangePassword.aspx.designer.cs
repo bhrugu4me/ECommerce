@@ -85,21 +85,21 @@ namespace ECommerce.admin {
         protected global::System.Web.UI.WebControls.HiddenField hdnid;
         
         /// <summary>
-        /// btnsave control.
+        /// lnkbtnsave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsave;
+        protected global::System.Web.UI.WebControls.LinkButton lnkbtnsave;
         
         /// <summary>
-        /// btnreset control.
+        /// lnkbtnreset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnreset;
+        protected global::System.Web.UI.WebControls.LinkButton lnkbtnreset;
     }
 }

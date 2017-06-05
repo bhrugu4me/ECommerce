@@ -32,6 +32,7 @@ namespace ECommerce
             if (user.UserTypeId.Equals("1"))
             {
                 Session["uid"] = user.UserId.ToString();
+                Session["Pwd"] = txtpwd.Text.ToString();
                 Session["fullname"] = user.FirstName + user.LastName;
                 Response.Redirect("Admin/WebAdminHome.aspx");
             }

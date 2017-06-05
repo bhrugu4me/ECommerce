@@ -76,18 +76,7 @@
            
         });
 
-          function checkvalid() {
-              var submit = true;
-
-              var $valid = $("#validateform").valid();
-              if (!$valid) {
-                  $validator.focusInvalid();
-                  submit = false;
-              }
-              return submit;
-
-          }
-
+         
 
     </script>
 
@@ -108,11 +97,9 @@
                 <div class="col-md-offset-3 col-md-6">
                         <!--<autocomplete ng-model="yourchoice" data="movies" ></autocomplete>-->
                         <asp:Label ID="lblmsg" runat="server" ></asp:Label>
-               
-            
                        <div class="form-group">
-                            <label class="col-sm-4 control-label" for="utype">Current Password:</label>
-                            <div class="col-sm-4">
+                            <label class="col-md-6 control-label" for="utype">Current Password:</label>
+                            <div class="col-md-6">
                                 <div class="input-group clearfix">
                                     <asp:TextBox type="text" ID="txtcurrpwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="req1" runat="server" Display="None" ControlToValidate="txtcurrpwd" />
@@ -122,8 +109,8 @@
 
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label" for="name">New Password:</label>
-                            <div class="col-sm-4">
+                            <label class="col-md-6 control-label" for="name">New Password:</label>
+                            <div class="col-md-6">
                                 <div class="clearfix">
                                     <asp:TextBox type="text" ID="txtnewpwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="req2" runat="server" Display="None" ControlToValidate="txtnewpwd" />
@@ -132,8 +119,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="col-sm-4 control-label" for="name">Confirm New Password:</label>
-                            <div class="col-sm-4">
+                            <label class="col-md-6 control-label" for="name">Confirm New Password:</label>
+                            <div class="col-md-6">
                                 <div class="clearfix">
                                     <asp:TextBox type="text" ID="txtcnewpwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="req3" runat="server" Display="None" ControlToValidate="txtcnewpwd" />
@@ -146,8 +133,8 @@
                             <div class="col-sm-offset-4 col-sm-9">
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:Button ID="btnsave" runat="server" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click1"  />
-                   <asp:Button ID="btnreset" runat="server" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
+                     <asp:LinkButton ID="lnkbtnsave" runat="server" CssClass ="btn btn-primary" text="save" OnClick="lnkbtnsave_Click"></asp:LinkButton>
+                   <asp:LinkButton ID="lnkbtnreset" runat="server" CausesValidation="false" CssClass="btn btn-default" Text="Reset" OnClick="lnkbtnreset_Click"></asp:LinkButton> 
 
                        
                 </div>
@@ -155,12 +142,7 @@
                            </div>
                     </div>
                 </div>
-            <div class="row">
-                <div class="col-lg-1">
-                    &nbsp;
-                </div>
-            </div>
-      
+          
         </div>
     </div>
 
