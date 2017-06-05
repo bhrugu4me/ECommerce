@@ -22,7 +22,7 @@
                     
                      <%= txtbname.UniqueID %>: {
                         required: true
-                    }
+                    } 
                 },
 
                 messages: {
@@ -108,7 +108,7 @@
                             <div class="col-sm-offset-4 col-sm-9">
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0" />
-                    <asp:LinkButton ID="btnsave" runat="server" ClientIDMode="Static" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click"  />
+                    <asp:LinkButton ID="btnsave" runat="server" ClientIDMode="Static" CssClass="btn btn-primary" Text="Save" OnClientClick="return checkvalid();" OnClick="btnsave_Click"  ></asp:LinkButton> 
                    <asp:LinkButton ID="btnreset" runat="server" ClientIDMode="Static" type="reset" CausesValidation="false" CssClass="btn btn-default" Text="Reset" OnClick="btnreset_Click" />
 
                        
