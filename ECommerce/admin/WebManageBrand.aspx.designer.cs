@@ -55,7 +55,7 @@ namespace ECommerce.admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsave;
+        protected global::System.Web.UI.WebControls.LinkButton btnsave;
         
         /// <summary>
         /// btnreset control.
@@ -64,7 +64,7 @@ namespace ECommerce.admin {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnreset;
+        protected global::System.Web.UI.WebControls.LinkButton btnreset;
         
         /// <summary>
         /// dvgrid control.

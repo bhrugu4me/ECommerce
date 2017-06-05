@@ -96,18 +96,23 @@
     <!-- initial page level scripts for examples -->
     <script src="../../assets/js/plugins/slimscroll/jquery.slimscroll.init.js"></script>
 
-    <script type="text/javascript">
+   <style>
+       .form-control-feedback
+{
+    top:0px !important;
+}
+   </style>
+
+    <script>
         function checkvalid() {
             var submit = true;
             var $valid = $("#validateform").valid();
             if (!$valid) {
-                $validator.focusInvalid();
                 submit = false;
             }
             return submit;
 
         }
-
 
 
     </script>

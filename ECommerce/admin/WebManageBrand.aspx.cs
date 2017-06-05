@@ -93,13 +93,13 @@ namespace ECommerce.admin
         protected void btnedit_Click(object sender, EventArgs e)
         {
             //Button btn = new Button();
-            Button btn = (Button)sender; //Difference??
+            LinkButton btn = (LinkButton)sender; //Difference??
             getdata(Convert.ToInt32(btn.CommandArgument.ToString()));
         }
 
         protected void btndel_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            LinkButton btn = (LinkButton)sender;
             int ret = -1;
             ret = objbrand.DeleteBrand(Convert.ToInt32(btn.CommandArgument.ToString()));
             if (ret > 0)

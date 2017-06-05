@@ -27,6 +27,8 @@ namespace BusinessLayer
                 cmd.Parameters.AddWithValue("@action", "INSERT");
                 cmd.Parameters.AddWithValue("@productid", obj.ProductId);
                 cmd.Parameters.AddWithValue("@productname", obj.ProductName);
+                cmd.Parameters.AddWithValue("@productimage", obj.ProductImage);
+                cmd.Parameters.AddWithValue("@actualimage", obj.ActualImage);
                 cmd.Parameters.AddWithValue("@categaryid", obj.CategaryId);
                 cmd.Parameters.AddWithValue("@subcategaryid", obj.SubCategaryId);
                 cmd.Parameters.AddWithValue("@description", obj.Description);
@@ -57,6 +59,9 @@ namespace BusinessLayer
                 cmd.Parameters.AddWithValue("@action", "Update");
                 cmd.Parameters.AddWithValue("@productid", obj.ProductId);
                 cmd.Parameters.AddWithValue("@productname", obj.ProductName);
+                cmd.Parameters.AddWithValue("@productimage", obj.ProductImage);
+                cmd.Parameters.AddWithValue("@actualimage", obj.ActualImage);
+
                 cmd.Parameters.AddWithValue("@categaryid", obj.CategaryId);
                 cmd.Parameters.AddWithValue("@subcategaryid", obj.SubCategaryId);
                 cmd.Parameters.AddWithValue("@description", obj.Description);
@@ -121,6 +126,29 @@ namespace BusinessLayer
             }
 
         }
+        public DataTable GetProductsByCategory(int catid)
+        {
+            try
+            {
+                cmd = new SqlCommand();
+                cmd.CommandText = "SP_MANAGE_PRODUCT";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@action", "GETBYCAT");
+                cmd.Parameters.AddWithValue("@catgaryid", catid);
+
+                return dbc.ExecuteQueryDataTable(cmd);
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+            finally
+            {
+                cmd.Dispose();
+            }
+
+        }
+
         public int DeleteProduct(Product obj)
         {
             try

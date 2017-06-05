@@ -31,6 +31,24 @@ namespace ECommerce.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtpname;
         
         /// <summary>
+        /// txtimage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtimage;
+        
+        /// <summary>
+        /// btnfileupload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload btnfileupload;
+        
+        /// <summary>
         /// txtdesc control.
         /// </summary>
         /// <remarks>
@@ -110,33 +128,6 @@ namespace ECommerce.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnreset;
-        
-        /// <summary>
-        /// btnfuplaod control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl btnfuplaod;
-        
-        /// <summary>
-        /// txtimage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtimage;
-        
-        /// <summary>
-        /// btnfileupload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload btnfileupload;
         
         /// <summary>
         /// dvgrid control.
