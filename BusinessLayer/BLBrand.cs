@@ -112,7 +112,7 @@ namespace BusinessLayer
             }
 
         }
-        public DataTable GetAllBrandById(int id)
+        public DataTable GetBrandById(int id)
         {
             try
             {

@@ -29,20 +29,25 @@ namespace ECommerce
                     lblmsg.Text = "Invalid UserName or Password, Please try again";
                     return;
                 }
-            if (user.UserTypeId.Equals("1"))
-            {
-                Session["uid"] = user.UserId.ToString();
-                Session["Pwd"] = txtpwd.Text.ToString();
-                Session["fullname"] = user.FirstName + user.LastName;
-                Response.Redirect("Admin/WebAdminHome.aspx");
-            }
             else
             {
                 Session["uid"] = user.UserId.ToString();
-                Session["Pwd"] = txtpwd.Text.ToString();
                 Session["fullname"] = user.FirstName + user.LastName;
+                if (user.UserTypeId.Equals("1"))
+                {
+                    Response.Redirect("Admin/WebAdminHome.aspx");
+                }
+                else if (user.UserTypeId.Equals("2"))
+                {
+                    Response.Redirect("Admin/WebSellerHome.aspx");
+                }
+                else if (user.UserTypeId.Equals("3"))
+                {
+                    Response.Redirect("Admin/WebClientHome.aspx");
+                }
+
             }
-            
+
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessObjects;
 using ServiceLayer;
-using System.Data;
 
 namespace ECommerce.admin
 {
@@ -37,9 +36,9 @@ namespace ECommerce.admin
             if (Page.IsValid)
             {
                 BusinessObjects.User user = new BusinessObjects.User();
-                DataTable dt = new DataTable();
-                int ret = -1;
-                if (Session["Pwd"].ToString() != txtcurrpwd.Text)
+                
+                long ret = -1;
+                if (objusr.GetPwd(Convert.ToInt64(Session["uid"].ToString()).ToString() != ClsUtility.MD5Hash(txtcurrpwd.Text))
                 {
                     lblmsg.Text = "Please enter correct Current Password";
                 }
@@ -47,12 +46,12 @@ namespace ECommerce.admin
                 {
                     user.Password = ClsUtility.MD5Hash(txtnewpwd.Text.Trim().ToString());
                     user.UserId = Convert.ToInt32(Session["Uid"].ToString());
-                    dt = objusr.Changepwd(user);
-                    if (dt != null)
-                        lblmsg.Text = "password changed successfully";
+                    ret = objusr.Changepwd(user);
+                    if (ret > 0)
+                        lblmsg.Text = "password change successfully";
                     else
                     {
-                        lblmsg.Text = "can not change password";
+                        lblmsg.Text = "Password changing failed";
                     }
                 }
 

@@ -14,7 +14,7 @@ namespace BusinessLayer
         DBConnect objdb;
 
         //tablename = user, columnname=userid, where= username=bhrugu4me
-        public string GetSingleVal(string tablename,string columnname,string where="")
+        public static string GetSingleVal(string tablename,string columnname,string where="")
         {
             try
             {

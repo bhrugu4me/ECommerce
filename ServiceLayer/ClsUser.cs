@@ -57,11 +57,15 @@ namespace ServiceLayer
             return retobj;
 
         }
-        public DataTable Changepwd(User obj)
+        public Int64 Changepwd(User obj)
         {
             return objbluser.ChangePwd(obj);
         }
 
+        public string GetPwd(Int64 uid)
+        {
+            ClsUtility.GetSingleVal("TblUser", "Password", "UserId=" + uid.ToString());
+        }
         public User AllUserById(User obj)
         {
             DataTable dt = new DataTable();

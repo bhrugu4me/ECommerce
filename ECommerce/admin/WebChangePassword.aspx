@@ -132,7 +132,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-4 col-sm-9">
                        
-                     <asp:HiddenField ID="hdnid" runat="server" Value="0" />
+                     <asp:HiddenField ID="hdnid" runat="server" Value="0"  />
                      <asp:LinkButton ID="lnkbtnsave" runat="server" CssClass ="btn btn-primary" text="save" OnClick="lnkbtnsave_Click"></asp:LinkButton>
                    <asp:LinkButton ID="lnkbtnreset" runat="server" CausesValidation="false" CssClass="btn btn-default" Text="Reset" OnClick="lnkbtnreset_Click"></asp:LinkButton> 
 

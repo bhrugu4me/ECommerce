@@ -109,7 +109,7 @@ namespace BusinessLayer
             }
 
         }
-        public DataTable ChangePwd(User obj)
+        public Int64 ChangePwd(User obj)
         {
             try
             {
@@ -120,12 +120,12 @@ namespace BusinessLayer
                 cmd.Parameters.AddWithValue("@password", obj.Password);
                 cmd.Parameters.AddWithValue("@UserId", obj.UserId);
 
-                return dbc.ExecuteQueryDataTable(cmd);
+                return dbc.ExecuteQuery(cmd);
 
             }
             catch (Exception ex)
             {
-                return null;
+                return 0;
             }
             finally
             {

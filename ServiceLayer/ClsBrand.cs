@@ -29,10 +29,10 @@ public class ClsBrand
             obj.BrandId = id;
             return objblbrand.DeleteBrand(obj);
         }
-        public Brand AllBrandById(int id)
+        public Brand GetBrandById(int id)
         {
             DataTable dt = new DataTable();
-            dt = objblbrand.GetAllBrandById(id);
+            dt = objblbrand.GetBrandById(id);
 
             Brand retobj = new Brand();
             if (dt != null)

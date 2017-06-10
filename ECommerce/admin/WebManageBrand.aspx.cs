@@ -47,7 +47,7 @@ namespace ECommerce.admin
 
         public void getdata(int id)
         {
-            Brand obj = objbrand.AllBrandById(id);
+            Brand obj = objbrand.GetBrandById(id);
             if (obj != null)
             {
                 txtbname.Text = obj.BrandName;
@@ -92,8 +92,7 @@ namespace ECommerce.admin
 
         protected void btnedit_Click(object sender, EventArgs e)
         {
-            //Button btn = new Button();
-            LinkButton btn = (LinkButton)sender; //Difference??
+            LinkButton btn = (LinkButton)sender;
             getdata(Convert.ToInt32(btn.CommandArgument.ToString()));
         }
 
