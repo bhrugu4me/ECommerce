@@ -38,7 +38,7 @@ namespace ECommerce.admin
                 BusinessObjects.User user = new BusinessObjects.User();
                 
                 long ret = -1;
-                if (objusr.GetPwd(Convert.ToInt64(Session["uid"].ToString()).ToString() != ClsUtility.MD5Hash(txtcurrpwd.Text))
+                if (objusr.GetPwd(Convert.ToInt64(Session["uid"].ToString())).ToString() != ClsUtility.MD5Hash(txtcurrpwd.Text))
                 {
                     lblmsg.Text = "Please enter correct Current Password";
                 }
