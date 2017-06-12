@@ -99,10 +99,12 @@
   <ItemGroup>
     <Content Include="admin\WebAdminHome.aspx" />
     <Content Include="admin\WebChangePassword.aspx" />
+    <Content Include="admin\WebForm1.aspx" />
     <Content Include="admin\WebManageBrand.aspx" />
     <Content Include="admin\WebManageCategory.aspx" />
     <Content Include="admin\WebManageProduct.aspx" />
     <Content Include="admin\WebManageStock.aspx" />
+    <Content Include="admin\WebUserProfile.aspx" />
     <Content Include="assets\css\bootstrap-responsive.css" />
     <Content Include="assets\css\bootstrap-responsive.min.css" />
     <Content Include="assets\css\bootstrap.css" />
@@ -379,6 +381,13 @@
     <Compile Include="admin\WebChangePassword.aspx.designer.cs">
       <DependentUpon>WebChangePassword.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\WebManageBrand.aspx.cs">
       <DependentUpon>WebManageBrand.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,6 +415,13 @@
     </Compile>
     <Compile Include="admin\WebManageStock.aspx.designer.cs">
       <DependentUpon>WebManageStock.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\WebUserProfile.aspx.cs">
+      <DependentUpon>WebUserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\WebUserProfile.aspx.designer.cs">
+      <DependentUpon>WebUserProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VerifyUsers.aspx.cs">

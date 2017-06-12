@@ -64,9 +64,9 @@ namespace BusinessLayer
                 cmd.Parameters.AddWithValue("@usertypeid", obj.UserTypeId);
                 cmd.Parameters.AddWithValue("@firstname", obj.FirstName);
                 cmd.Parameters.AddWithValue("@lastname", obj.LastName);
-                cmd.Parameters.AddWithValue("@password", obj.Password);
+              //  cmd.Parameters.AddWithValue("@password", obj.Password);
                 cmd.Parameters.AddWithValue("@emailid", obj.EmailId);
-                cmd.Parameters.AddWithValue("@mobileno", obj.MobileNo);
+                cmd.Parameters.AddWithValue("@ContactNo", obj.MobileNo);
                 cmd.Parameters.AddWithValue("@gender", obj.Gender);
                 cmd.Parameters.AddWithValue("@birthdate", obj.Birthdate);
                 cmd.Parameters.AddWithValue("@requestedby", obj.requestedBy);

@@ -8,9 +8,12 @@
         }
     </style>
 
-
+    <script>
+    </script>
       <script type="text/javascript">
-        $(document).ready(function () {
+          $(document).ready(function () {
+
+             
 
             //documentation : http://docs.jquery.com/Plugins/Validation/validate		
             $('#validateform').validate({
@@ -26,7 +29,10 @@
                          required: true
                      },
                      <%= txtcnewpwd.UniqueID %>: {
-                         required: true
+                         required: true,
+                         // equalTo :'txtnewpwd'
+                       //  equalTo : '[name="txtnewpwd"]'
+                       //  passwordMatch: true 
                      },
                     
                 },
@@ -43,6 +49,7 @@
                     
                     <%= txtcnewpwd.UniqueID %> : {
                         required: "Please Enter Confirm New Password.",
+                       // passwordMatch:"Your Confirm Password must match with New Password"
                     }
                 },
 
@@ -76,7 +83,7 @@
            
         });
 
-         
+       
 
     </script>
 
@@ -124,6 +131,7 @@
                                 <div class="clearfix">
                                     <asp:TextBox type="text" ID="txtcnewpwd" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="req3" runat="server" Display="None" ControlToValidate="txtcnewpwd" />
+                                    <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtnewpwd" ControlToValidate="txtcnewpwd" Display="None" ErrorMessage="CompareValidator"></asp:CompareValidator>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +141,7 @@
                             <div class="col-sm-offset-4 col-sm-9">
                        
                      <asp:HiddenField ID="hdnid" runat="server" Value="0"  />
-                     <asp:LinkButton ID="lnkbtnsave" runat="server" CssClass ="btn btn-primary" text="save" OnClick="lnkbtnsave_Click"></asp:LinkButton>
+                     <asp:LinkButton ID="lnkbtnsave" runat="server" OnClientClick="return checkvalid();" CssClass ="btn btn-primary" text="save" OnClick="lnkbtnsave_Click"></asp:LinkButton>
                    <asp:LinkButton ID="lnkbtnreset" runat="server" CausesValidation="false" CssClass="btn btn-default" Text="Reset" OnClick="lnkbtnreset_Click"></asp:LinkButton> 
 
                        

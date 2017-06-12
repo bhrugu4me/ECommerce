@@ -431,7 +431,8 @@ namespace ServiceLayer
 
         public static string GetSingleVal(string tablename, string columnname, string where = "")
         {
-            return BusinessLayer.BLUtility.GetSingleVal(tablename, columnname, where);
+            BusinessLayer.BLUtility blutil = new BusinessLayer.BLUtility();
+            return blutil.GetSingleVal(tablename, columnname, where);
         }
 
    }

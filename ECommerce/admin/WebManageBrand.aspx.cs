@@ -17,6 +17,7 @@ namespace ECommerce.admin
             if (!IsPostBack)
             {
                 reset();
+                
             }
 
         }

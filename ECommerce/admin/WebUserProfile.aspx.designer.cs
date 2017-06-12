@@ -10,7 +10,7 @@
 namespace ECommerce.admin {
     
     
-    public partial class WebChangePassword {
+    public partial class WebUserProfile {
         
         /// <summary>
         /// lblmsg control.
@@ -22,67 +22,67 @@ namespace ECommerce.admin {
         protected global::System.Web.UI.WebControls.Label lblmsg;
         
         /// <summary>
-        /// txtcurrpwd control.
+        /// txtfirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcurrpwd;
+        protected global::System.Web.UI.WebControls.TextBox txtfirstName;
         
         /// <summary>
-        /// req1 control.
+        /// txtlastname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req1;
+        protected global::System.Web.UI.WebControls.TextBox txtlastname;
         
         /// <summary>
-        /// txtnewpwd control.
+        /// rbgender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtnewpwd;
+        protected global::System.Web.UI.WebControls.RadioButtonList rbgender;
         
         /// <summary>
-        /// req2 control.
+        /// txtemailid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req2;
+        protected global::System.Web.UI.WebControls.TextBox txtemailid;
         
         /// <summary>
-        /// txtcnewpwd control.
+        /// txtbirthdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtcnewpwd;
+        protected global::System.Web.UI.WebControls.TextBox txtbirthdate;
         
         /// <summary>
-        /// req3 control.
+        /// txtmobileno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req3;
+        protected global::System.Web.UI.WebControls.TextBox txtmobileno;
         
         /// <summary>
-        /// CompareValidator1 control.
+        /// ddlusertype control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlusertype;
         
         /// <summary>
         /// hdnid control.
@@ -94,21 +94,21 @@ namespace ECommerce.admin {
         protected global::System.Web.UI.WebControls.HiddenField hdnid;
         
         /// <summary>
-        /// lnkbtnsave control.
+        /// btnsave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtnsave;
+        protected global::System.Web.UI.WebControls.LinkButton btnsave;
         
         /// <summary>
-        /// lnkbtnreset control.
+        /// btnreset control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkbtnreset;
+        protected global::System.Web.UI.WebControls.LinkButton btnreset;
     }
 }

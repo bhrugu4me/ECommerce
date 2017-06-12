@@ -10,6 +10,7 @@ namespace BusinessObjects
     {
         public Int64 UserId { get; set; }
         public string UserTypeId { get; set; }
+        public string UserTypeName { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

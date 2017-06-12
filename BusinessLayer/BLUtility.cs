@@ -14,13 +14,13 @@ namespace BusinessLayer
         DBConnect objdb;
 
         //tablename = user, columnname=userid, where= username=bhrugu4me
-        public static string GetSingleVal(string tablename,string columnname,string where="")
+        public string GetSingleVal(string tablename,string columnname,string where="")
         {
             try
             {
                 SqlCommand cmd = new SqlCommand();
                 objdb = new DBConnect();
-                cmd.CommandText = "select " + columnname + " from " + tablename + where == "" ? ";" : " where = " + where + ";";
+                cmd.CommandText = "select " + columnname + " from " + tablename + (where == "" ? ";" : " where " + where + ";");
                 cmd.CommandType = CommandType.Text;
                 return objdb.ExecuteStringQuery(cmd);
             }

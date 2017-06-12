@@ -64,7 +64,7 @@ namespace ServiceLayer
 
         public string GetPwd(Int64 uid)
         {
-            ClsUtility.GetSingleVal("TblUser", "Password", "UserId=" + uid.ToString());
+           return ClsUtility.GetSingleVal("TblUser", "Password", "UserId=" + uid.ToString());
         }
         public User AllUserById(User obj)
         {
@@ -81,7 +81,7 @@ namespace ServiceLayer
                     retobj.InsertedBy = dt.Rows[0]["InsertedBy"].ToString();
                     retobj.InsertedOn = Convert.ToDateTime(dt.Rows[0]["InsertedOn"].ToString());
                     retobj.MobileNo = dt.Rows[0]["ContactNo"].ToString();
-                    retobj.Password = dt.Rows[0]["Password"].ToString();
+                 //   retobj.Password = dt.Rows[0]["Password"].ToString();
                     retobj.UpdatedBy = dt.Rows[0]["UpdatedBy"].ToString();
                     retobj.UpdatedOn = Convert.ToDateTime(dt.Rows[0]["UpdatedOn"].ToString());
                     retobj.UserTypeId = dt.Rows[0]["UserTypeId"].ToString();
