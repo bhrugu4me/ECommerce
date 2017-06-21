@@ -75,7 +75,7 @@ namespace ECommerce
 
         protected void btncancel_Click(object sender, EventArgs e)
         {
-
+            reset();
         }
     }
 }

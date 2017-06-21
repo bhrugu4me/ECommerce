@@ -130,26 +130,49 @@ namespace ECommerce.Admin
 
             ClsProduct objprod = new ClsProduct();
             Product product = new Product();
-            product.CategaryId = ddlcat.SelectedItem.Value;
-            product.CategaryName = ddlcat.SelectedItem.Text;
-            product.Description = txtdesc.Text;
-            product.ProductName = txtpname.Text;
-            product.SellerDescr = txtsdesc.Text;
-            product.SellerId = ddlsell.SelectedItem.Value;
-            product.SubCategaryId = dvsubcat.Visible ? ddlsubcat.SelectedItem.Value : "0";
-            product.SubCategaryName = dvsubcat.Visible ? ddlsubcat.SelectedItem.Text : "";
-            product.requestedby = Session["uid"].ToString();
-
-
-
-
-
-            int ret = objprod.InsertProduct(product);
-            if (ret > 0)
+            if (fuproduct.HasFile)
             {
-                lblmsg.Text = "Data Save Successfully";
-                reset();
+                string strFileType = Path.GetExtension(fuproduct.FileName).ToLower();
+                long retval = -1;
+                string filename = (Session["uid"].ToString() + "_" + DateTime.Now.Ticks.ToString() + strFileType);
+                string path = Server.MapPath("~/Images/Products/") + filename;
+                string orignalfilename = fuproduct.PostedFile.FileName.ToString();
+                string savepath = Server.MapPath("~/Images/Products/");
+
+                fuproduct.SaveAs(path);
+                product.ProductId = Convert.ToInt32(hdnid.Value);
+                product.CategaryId = ddlcat.SelectedItem.Value;
+                product.CategaryName = ddlcat.SelectedItem.Text;
+                product.Description = txtdesc.Text;
+                product.ProductName = txtpname.Text;
+                product.SellerDescr = txtsdesc.Text;
+                product.SellerId = ddlsell.SelectedItem.Value;
+                product.SubCategaryId = dvsubcat.Visible ? ddlsubcat.SelectedItem.Value : "0";
+                product.SubCategaryName = dvsubcat.Visible ? ddlsubcat.SelectedItem.Text : "";
+                product.requestedby = Session["uid"].ToString();
+                product.ProductImage = filename;
+                product.ActualImage = orignalfilename;
+
+                if (hdnid.Value.Equals("0"))
+                {
+                    retval = objprod.InsertProduct(product);
+                    if (retval > 0)
+                    {
+                        lblmsg.Text = "Product Save Successfully";
+                        reset();
+                    }
+                }
+                else
+                {
+                    retval = objprod.UpdateProduct(product);
+                    if (retval > 0)
+                    {
+                        lblmsg.Text = "Product update Successfully";
+                        reset();
+                    }
+                }
             }
+            
         }
 
       

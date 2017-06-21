@@ -31,22 +31,13 @@ namespace ECommerce.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtpname;
         
         /// <summary>
-        /// txtimage control.
+        /// fuproduct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtimage;
-        
-        /// <summary>
-        /// btnfileupload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload btnfileupload;
+        protected global::System.Web.UI.WebControls.FileUpload fuproduct;
         
         /// <summary>
         /// txtdesc control.
