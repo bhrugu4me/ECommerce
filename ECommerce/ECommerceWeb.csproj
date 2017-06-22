@@ -323,6 +323,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="admin\Admin.Master" />
+    <Content Include="WebUserControls\UCChangePwd.ascx" />
+    <Content Include="WebUserControls\UCUserProfile.ascx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -444,6 +446,20 @@
     </Compile>
     <Compile Include="WebSignup.aspx.designer.cs">
       <DependentUpon>WebSignup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControls\UCChangePwd.ascx.cs">
+      <DependentUpon>UCChangePwd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControls\UCChangePwd.ascx.designer.cs">
+      <DependentUpon>UCChangePwd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControls\UCUserProfile.ascx.cs">
+      <DependentUpon>UCUserProfile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControls\UCUserProfile.ascx.designer.cs">
+      <DependentUpon>UCUserProfile.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

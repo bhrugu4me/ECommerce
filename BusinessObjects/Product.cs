@@ -14,10 +14,8 @@ namespace BusinessObjects
         public string ActualImage { get; set; }
         public string CategaryId { get; set; }
         public string SubCategaryId { get; set; }
-
         public string CategaryName { get; set; }
         public string SubCategaryName { get; set; }
-
         public string Description { get; set; }
         public string SellerId { get; set; }
         public string SellerDescr { get; set; }

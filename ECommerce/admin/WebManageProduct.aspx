@@ -105,8 +105,7 @@
                             </div>
                         <div class="form-group">
                             <label for="fupload">Upload Image:</label>
-                            <asp:TextBox ID="txtimage" runat="server" CssClass="form-control"></asp:TextBox>
-                            <asp:FileUpload ID="btnfileupload" runat="server" CssClass="btn btn-link" />
+                            <asp:FileUpload ID="fuproduct" runat="server" CssClass="btn btn-link" />
 
 
                         </div>
